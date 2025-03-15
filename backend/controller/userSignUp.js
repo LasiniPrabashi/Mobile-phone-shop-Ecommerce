@@ -1,10 +1,9 @@
 const userModel = require("../model/userModel")
 const bcrypt = require('bcryptjs');
 
+
 async function userSignUpController(req,res){
-
     try{
-
         const { email, password, name} = req.body
 
         const user = await userModel.findOne({email})
@@ -17,8 +16,8 @@ async function userSignUpController(req,res){
 
         if(!email){
             throw new Error("Please provide email")
-         }
-         if(!password){
+        }
+        if(!password){
             throw new Error("Please provide password")
         }
         if(!name){
