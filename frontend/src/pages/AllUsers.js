@@ -4,6 +4,7 @@ import {toast} from "react-toastify";
 import SummaryApi from "../common";
 import {MdModeEdit} from "react-icons/md";
 import moment from "moment";
+import ChangeUserRole from "../components/ChangeUserRole";
 
 const AllUsers = () => {
     const [allUser,setAllUsers] = useState([])
@@ -38,7 +39,7 @@ const AllUsers = () => {
     },[])
 
     return (
-        <div className='bg-white pb-4'>
+        <div className='bg-white pb-4 mt-6'>
             <table className='w-full userTable '>
                 <thead>
                 <tr className='bg-black text-white'>
@@ -78,18 +79,19 @@ const AllUsers = () => {
                 </tbody>
             </table>
 
-            {/*{*/}
-            {/*    openUpdateRole && (*/}
-            {/*        <ChangeUserRole*/}
-            {/*            onClose={()=>setOpenUpdateRole(false)}*/}
-            {/*            name={updateUserDetails.name}*/}
-            {/*            email={updateUserDetails.email}*/}
-            {/*            role={updateUserDetails.role}*/}
-            {/*            userId={updateUserDetails._id}*/}
-            {/*            callFunc={fetchAllUsers}*/}
-            {/*        />*/}
-            {/*    )*/}
-            {/*}*/}
+            {
+                openUpdateRole && (
+                    <ChangeUserRole
+                        onClose={()=>setOpenUpdateRole(false)}
+                        name={updateUserDetails.name}
+                        email={updateUserDetails.email}
+                        role={updateUserDetails.role}
+                        userId={updateUserDetails._id}
+                        callFunc={fetchAllUsers}
+                    />
+                )
+            }
+
         </div>
     )
 }
