@@ -28,30 +28,17 @@ function App() {
         }
     }
 
-    // const fetchUserAddToCart = async()=>{
-    //     const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
-    //         method : SummaryApi.addToCartProductCount.method,
-    //         credentials : 'include'
-    //     })
-    //
-    //     const dataApi = await dataResponse.json()
-    //
-    //     setCartProductCount(dataApi?.data?.count)
-    // }
 
     useEffect(()=>{
-        /**user Details */
         fetchUserDetails()
-        /**user Details cart product */
-        // fetchUserAddToCart()
+
 
     },[])
     return (
         <>
             <Context.Provider value={{
-                fetchUserDetails, // user detail fetch
-                // cartProductCount,
-                // fetchUserAddToCart
+                fetchUserDetails,
+
             }}>
                 <ToastContainer
                     position='top-center'
