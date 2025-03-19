@@ -5,7 +5,8 @@ import {FaCloudUploadAlt} from "react-icons/fa";
 import uploadImage from "../helpers/uploadImage";
 import {toast} from "react-toastify";
 import SummaryApi from "../common";
-import productCategory from "../helpers/productCategory";
+// import productCategory from "../helpers/productCategory";
+import DisplayImage from "./DisplayImage";
 
 const UploadProduct = ({ onClose,fetchData})=> {
 
@@ -205,15 +206,20 @@ return(
                >
               </textarea>
 
-
-
-
-
+               
                <button className='px-3 py-2  text-white mb-10 bg-[#bd83b8] hover:bg-[#564c78]'>Upload Product</button>
            </form>
 
 
        </div>
+
+
+       {/***display image full screen */}
+       {
+           openFullScreenImage && (
+               <DisplayImage onClose={()=>setOpenFullScreenImage(false)} imgUrl={fullScreenImage}/>
+           )
+       }
    </div>
 )
 }

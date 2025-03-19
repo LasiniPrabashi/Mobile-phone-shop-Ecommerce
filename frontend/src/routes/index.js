@@ -9,6 +9,7 @@ import AllUsers from "../pages/AllUsers";
 import AllProducts from "../pages/AllProducts";
 
 
+
 const router = createBrowserRouter([
     {
         path : "/",
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
             {
                 path : "sign-up",
                 element : <SignUp/>
-            },{
+            },
+            {
                 path : "admin-panel",
                 element : <AdminPanel/>,
                 children : [

@@ -8,8 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {toast} from "react-toastify";
 import {setUserDetails} from "../store/userSlice";
 import SummaryApi from "../common";
-import ROLE from "../common/role";
-
+// import ROLE from "../common/role";
 
 
 const Header = () => {
@@ -74,11 +73,11 @@ const Header = () => {
                     menuDisplay && (
                     <div className='absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded' >
                         <nav>
-                            {
-                                user?.role === ROLE.ADMIN && (
+                            {/*{*/}
+                            {/*    user?.role === ROLE.ADMIN && (*/}
                             <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)} >Admin Panel</Link>
-                                )
-                            }
+                            {/*    )*/}
+                            {/*}*/}
                         </nav>
                         </div>
                          )
