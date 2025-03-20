@@ -5,19 +5,21 @@ import {FaCloudUploadAlt} from "react-icons/fa";
 import uploadImage from "../helpers/uploadImage";
 import {toast} from "react-toastify";
 import SummaryApi from "../common";
-// import productCategory from "../helpers/productCategory";
 import DisplayImage from "./DisplayImage";
+import productCategory from "../helpers/productCategory";
 
 const UploadProduct = ({ onClose,fetchData})=> {
 
     const [data,setData] = useState({
         productName : "",
         brandName : "",
+        category : "",
         productImage : [],
         description : "",
         price : "",
         sellingPrice : ""
     })
+
     const [openFullScreenImage,setOpenFullScreenImage] = useState(false)
     const [fullScreenImage,setFullScreenImage] = useState("")
 
@@ -124,6 +126,17 @@ return(
                    required
                />
 
+               <label htmlFor='category' className='mt-3'>Category :</label>
+               <select required value={data.category} name='category' onChange={handleOnChange} className='p-2 bg-slate-100 border rounded'>
+                   <option value={""}>Select Category</option>
+                   {
+                       productCategory.map((el,index)=>{
+                           return(
+                               <option value={el.value} key={el.value+index}>{el.label}</option>
+                           )
+                       })
+                   }
+               </select>
 
                <label htmlFor='productImage' className='mt-3'>Product Image :</label>
                <label htmlFor='uploadImageInput'>
