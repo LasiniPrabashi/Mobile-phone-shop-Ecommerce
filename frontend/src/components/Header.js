@@ -48,7 +48,7 @@ const Header = () => {
 
            <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2'>
                 <input type='text' placeholder='search product here...' className='w-full outline-none' />
-                <div className="text-lg min-w-[50px] h-8 flex items-center justify-center rounded-r-full text-white" style={{ backgroundColor: "#bd83b8" }}>
+                <div className="text-lg min-w-[50px] h-8 flex items-center justify-center rounded-r-full text-white" style={{ backgroundColor: "#5F99AE" }}>
                   <GrSearch />
                 </div>
             </div>
@@ -95,7 +95,7 @@ const Header = () => {
                 <div>
                     {
                         user?._id  ? (
-                                <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-[#bd83b8] hover:bg-[#564c78]'>Logout</button>
+                                <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-[#5F99AE] hover:bg-[#564c78]'>Logout</button>
                             )
                             : (
                                 <Link to={"/login"} className='px-3 py-1 rounded-full text-white bg-[#bd83b8] hover:bg-[#564c78]'>Login</Link>
