@@ -84,10 +84,10 @@ const VerticalCardProduct = ({category, heading}) => {
                                         <h2 className='font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black'>{product?.productName}</h2>
                                         <p className='capitalize text-slate-500'>{product?.category}</p>
                                         <div className='flex gap-3'>
-                                            <p className='text-red-600 font-medium'>{ displayINRCurrency(product?.sellingPrice) }</p>
+                                            <p className='text-black font-medium'>{ displayINRCurrency(product?.sellingPrice) }</p>
                                             <p className='text-slate-500 line-through'>{ displayINRCurrency(product?.price)  }</p>
                                         </div>
-                                        <button className='text-sm bg-[#BF3131] hover:bg-[#7D0A0A] text-white px-3 py-0.5 rounded-full w-2/3 mt-1' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
+                                        <button className='text-sm bg-yellow-400 hover:bg-yellow-600 text-black font-bold px-3 py-0.5 rounded-full w-2/3 mt-1' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
                                     </div>
                                 </Link>
                             )

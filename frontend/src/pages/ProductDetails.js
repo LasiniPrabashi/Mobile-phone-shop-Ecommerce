@@ -4,7 +4,6 @@ import SummaryApi from '../common'
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import displayINRCurrency from '../helpers/displayCurrency';
-// import VerticalCardProduct from '../components/VerticalCardProduct';
 // import CategroyWiseProductDisplay from '../components/CategoryWiseProductDisplay';
 import addToCart from '../helpers/addToCart';
 import Context from '../context';
@@ -186,11 +185,11 @@ const ProductDetails = () => {
                         ) :
                         (
                             <div className='flex flex-col gap-1'>
-                                <p className='bg-red-200 text-red-600 px-2 rounded-full inline-block w-fit'>{data?.brandName}</p>
+                                <p className='bg-orange-200 text-black px-2 rounded-full inline-block w-fit'>{data?.brandName}</p>
                                 <h2 className='text-2xl lg:text-4xl font-medium'>{data?.productName}</h2>
                                 <p className='capitalize text-slate-400'>{data?.category}</p>
 
-                                <div className='text-red-600 flex items-center gap-1'>
+                                <div className='text-yellow-500 flex items-center gap-1'>
                                     <FaStar/>
                                     <FaStar/>
                                     <FaStar/>
@@ -204,8 +203,8 @@ const ProductDetails = () => {
                                 </div>
 
                                 <div className='flex items-center gap-3 my-2'>
-                                    <button className='border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-red-600 font-medium hover:bg-red-600 hover:text-white' onClick={(e)=>handleBuyProduct(e,data?._id)}>Buy</button>
-                                    <button className='border-2 border-red-600 rounded px-3 py-1 min-w-[120px] font-medium text-white bg-red-600 hover:text-red-600 hover:bg-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Add To Cart</button>
+                                    <button className='border-2 border-orange-400 rounded px-3 py-1 min-w-[120px] text-black font-medium hover:bg-[#FFA500] hover:text-black' onClick={(e)=>handleBuyProduct(e,data?._id)}>Buy</button>
+                                    <button className='border-2 border-yellow-400 rounded px-3 py-1 min-w-[120px] font-medium text-black bg-[#FFEB00]  hover:text-black hover:bg-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Add To Cart</button>
                                 </div>
 
                                 <div>

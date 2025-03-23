@@ -28,6 +28,16 @@ function App() {
         }
     }
 
+    const fetchUserAddToCart = async()=>{
+        const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
+            method : SummaryApi.addToCartProductCount.method,
+            credentials : 'include'
+        })
+
+        const dataApi = await dataResponse.json()
+
+        setCartProductCount(dataApi?.data?.count)
+    }
 
     useEffect(()=>{
         fetchUserDetails()
