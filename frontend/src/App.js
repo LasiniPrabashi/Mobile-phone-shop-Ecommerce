@@ -41,14 +41,15 @@ function App() {
 
     useEffect(()=>{
         fetchUserDetails()
-
-
+        fetchUserAddToCart()
     },[])
+
     return (
         <>
             <Context.Provider value={{
                 fetchUserDetails,
-
+                cartProductCount,
+                fetchUserAddToCart
             }}>
                 <ToastContainer
                     position='top-center'

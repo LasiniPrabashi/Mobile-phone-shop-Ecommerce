@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Logo from './Logo'
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
@@ -9,13 +9,14 @@ import {toast} from "react-toastify";
 import {setUserDetails} from "../store/userSlice";
 import SummaryApi from "../common";
 import ROLE from "../common/role";
+import Context from "../context";
 
 
 const Header = () => {
     const user = useSelector(state => state?.user?.user)
     const dispatch = useDispatch()
     const [menuDisplay,setMenuDisplay] = useState(false)
-
+    const context = useContext(Context)
 
     const handleLogout = async() => {
         const fetchData = await fetch(SummaryApi.logout_user.url,{
@@ -84,13 +85,17 @@ const Header = () => {
                     }
                 </div>
 
-              <div className='text-2xl relative'>
-              <span><FaShoppingCart/></span>
+                {
+                    user?._id && (
+                        <Link to={"/cart"} className='text-2xl relative'>
+                            <span><FaShoppingCart/></span>
 
-              <div className='bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
-                              <p className='text-sm'></p>
-                          </div>
-              </div>
+                            <div className='bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
+                                <p className='text-sm'>{context?.cartProductCount}</p>
+                            </div>
+                        </Link>
+                    )
+                }
 
                 <div>
                     {
